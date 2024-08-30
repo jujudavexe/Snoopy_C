@@ -1,0 +1,3 @@
+C:/Users/JULIEN/CLionProjects/Snoopy/cmake-build-debug/CMakeFiles/Snoopy.dir
+C:/Users/JULIEN/CLionProjects/Snoopy/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/JULIEN/CLionProjects/Snoopy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
