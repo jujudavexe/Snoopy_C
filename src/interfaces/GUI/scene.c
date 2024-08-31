@@ -1,5 +1,4 @@
-#include "scene.h"
-
+#include "../../../include/scene.h"
 #include <stdio.h>
 
 #define LENGTH 20
@@ -11,7 +10,7 @@ typedef struct {
     char block[200];
 } Scene;
 
-char getElementInScene(int column, int row) {
+char getElementInScene(const int column, const int row) {
     const char scene[WIDTH][LENGTH] = {
         {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',},
         {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',},
