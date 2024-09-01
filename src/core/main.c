@@ -1,6 +1,5 @@
-#include <conio.h>
-#include <stdlib.h>
 #include "../../include/scene.h"
+#include "../../include/keypress.h"
 
 int main(void) {
     char key;
@@ -8,16 +7,13 @@ int main(void) {
     Scene scene = createScene();
     displayScene(scene);
 
-    while (1) {
-        if (kbhit()) {
-            key = getch();
-
-            system("cls");
-
+    do {
+        key = getLastKeyPressed();
+        if(getLastKeyPressed() != '\0') {
             displayScene(scene);
         }
-    }
+
+    } while (1);
 
     return 0;
 }
-

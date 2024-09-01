@@ -1,5 +1,6 @@
 #include "../../../include/scene.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 char getElementInThis();
 
@@ -37,6 +38,7 @@ Scene createScene() {
 
 
 void displayScene(const Scene scene) {
+    system("cls");
     for (int i = 0; i < WIDTH; i++) {
         for (int j = 0; j < LENGTH; j++) {
             printf("%c", scene.scene[i][j]);
