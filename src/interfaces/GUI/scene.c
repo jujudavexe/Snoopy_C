@@ -24,7 +24,7 @@ Scene createScene() {
     return scene;
 }
 
-/*void refreshScene(char (*scene)[WIDTH][LENGTH], Block blocks, Entity entities) { // place les blocs puis les entités sur la scène.
+/*void refreshScene(char (*scene)[LENGTH], Block blocks, Entity entities) { // place les blocs puis les entités sur la scène.
     for (int iBlock = 0; iBlock < (sizeof(blocks) / sizeof(blocks[0])); iBlock++) {
         Block block = blocks[iBlock];
         scene[block.posY][block.posX] = block.character;
