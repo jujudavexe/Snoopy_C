@@ -1,11 +1,12 @@
 #include <conio.h>
 #include <stdlib.h>
-#include "interfaces/GUI/scene.h"
+#include "../../include/scene.h"
 
 int main(void) {
     char key;
 
-    displayScene();
+    Scene scene = createScene();
+    displayScene(scene);
 
     while (1) {
         if (kbhit()) {
@@ -13,7 +14,7 @@ int main(void) {
 
             system("cls");
 
-            displayScene();
+            displayScene(scene);
         }
     }
 

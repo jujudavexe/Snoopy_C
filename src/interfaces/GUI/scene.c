@@ -1,40 +1,45 @@
 #include "../../../include/scene.h"
 #include <stdio.h>
 
-#define LENGTH 20
-#define WIDTH 10
+char getElementInThis();
 
-typedef struct {
-    char scene[WIDTH][LENGTH];
-    char entities[1];
-    char block[200];
-} Scene;
-
-char getElementInScene(const int column, const int row) {
-    const char scene[WIDTH][LENGTH] = {
-        {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',},
-        {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',},
-        {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',},
-        {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',},
-        {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',},
-        {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',},
-        {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',},
-        {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',},
-        {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',},
-        {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',}
+Scene createScene() {
+    Scene scene = {
+        .scene = {
+            {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
+            {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
+            {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
+            {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
+            {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
+            {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
+            {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
+            {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
+            {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
+            {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'}
+        },
+        .block = {0},
+        .entities = {0},
     };
 
-    return scene[column][row];
+    return scene;
 }
 
-void initializeScene() {
+/*void refreshScene(char (*scene)[WIDTH][LENGTH], Block blocks, Entity entities) { // place les blocs puis les entités sur la scène.
+    for (int iBlock = 0; iBlock < (sizeof(blocks) / sizeof(blocks[0])); iBlock++) {
+        Block block = blocks[iBlock];
+        scene[block.posY][block.posX] = block.character;
+    }
+    for (int iEntities = 0; iEntities < (sizeof(block) / sizeof(block[0])); iEntities++) {
+        Entity entity = entities[iEntities];
+        scene[entity.posY][entity.posX] = entity.character;
+    }
+}*/
 
-}
 
-void displayScene() {
-    for(int i = 0; i < WIDTH; i++) {
+void displayScene(const Scene scene) {
+    for (int i = 0; i < WIDTH; i++) {
         for (int j = 0; j < LENGTH; j++) {
-            printf("%c", getElementInScene(i, j));
+            printf("%c", scene.scene[i][j]);
         }
         printf("\n");
     }
