@@ -1,6 +1,8 @@
 #ifndef SCENE_H
 #define SCENE_H
 
+#include "block_handler.h"
+
 #define LENGTH 20
 #define WIDTH 10
 
@@ -12,6 +14,7 @@ typedef struct {
 
 Scene createScene();
 void displayScene(Scene scene);
-void refreshScene(char scene[WIDTH][LENGTH], char blocks, char entities);
+void refreshScene(char scene[WIDTH][LENGTH], Block blocks[]);
+void initBlocks(Block blocks[]);
 
-#endif //SCENE_H
+#endif
