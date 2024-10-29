@@ -1,15 +1,15 @@
 #include "../../../../../include/air_block.h"
 
-int action(enum EntityAction) {
+int airBlockAction(enum EntityAction) {
     return 0;
 }
 
 Block createAirBlock(const int posX, const int posY) {
     Block block;
-    block.symbol = " ";
+    block.symbol = ' ';
     block.posX = posX;
     block.posY = posY;
-    block.action = action;
+    block.action = airBlockAction;
     block.wasPushed = 0;
 
     return block;
