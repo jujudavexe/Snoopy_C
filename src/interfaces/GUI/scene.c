@@ -8,22 +8,30 @@ char getElementInThis();
 
 Scene createScene() {
     Scene scene;
+
     Block blocks[(WIDTH * LENGTH)];
     initBlocks(blocks);
-    refreshScene(scene.scene, blocks);
+
+    int numberOfEntities = 1;
+    Entity entities[numberOfEntities];
+    initEntities(entities, numberOfEntities, 4, 3);
+
+
+    refreshScene(scene.scene, blocks, entities, numberOfEntities);
 
     return scene;
 }
 
-void refreshScene(char scene[WIDTH][LENGTH], Block blocks[]/*, Entity entities*/) {
+void refreshScene(char scene[WIDTH][LENGTH], Block blocks[], Entity entities[], const int numberOfEntities) {
     for (int iBlock = 0; iBlock < (WIDTH * LENGTH); iBlock++) {
         Block block = blocks[iBlock];
         scene[block.posY][block.posX] = block.symbol;
     }
-    //for (int iEntities = 0; iEntities < (sizeof(block) / sizeof(block[0])); iEntities++) {
-    //    Entity entity = entities[iEntities];
-    //    scene[entity.posY][entity.posX] = entity.symbol;
-    //}
+
+    for (int iEntities = 0; iEntities < numberOfEntities; iEntities++) {
+        Entity entity = entities[iEntities];
+        scene[entity.posY][entity.posX] = entity.symbol;
+    }
 }
 
 
@@ -59,11 +67,17 @@ void initBlocks(Block blocks[]) {
     for (int y = 0; y < WIDTH; y++) {
         for (int x = 0; x < LENGTH; x++) {
             if (y % 2 == 0) {
-                blocks[x + y * LENGTH] = createNeutralBlock(x, y);
+                blocks[x + y * LENGTH] = getBlockWithID(1, x, y);
             } else {
-                blocks[x + y * LENGTH] = createAirBlock(x, y);
+                blocks[x + y * LENGTH] = getBlockWithID(0, x, y);
             }
         }
+    }
+}
+
+void initEntities(Entity entities[], const int numberOfEntities, const int posX, const int posY) {
+    for (int i = 0; i < numberOfEntities; i++) {
+        entities[i] = getEntityWithID(0, posX, posY);
     }
 }
 
