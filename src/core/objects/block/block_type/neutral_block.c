@@ -6,7 +6,7 @@ int neutralBlockAction(enum EntityAction) {
 
 Block createNeutralBlock(const int posX, const int posY) {
     Block block;
-    block.symbol = 'N';
+    block.symbol = 0xDB;
     block.posX = posX;
     block.posY = posY;
     block.action = neutralBlockAction;
