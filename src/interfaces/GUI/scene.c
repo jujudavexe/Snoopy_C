@@ -29,25 +29,28 @@ void refreshScene(char scene[WIDTH][LENGTH], Block blocks[]/*, Entity entities*/
 
 void displayScene(char scene[WIDTH][LENGTH]) {
     system("cls");
+    char borderCharacter = 0xB1;
 
     for (int i = 0; i < (LENGTH + 4); i++) {
-        printf("%c", 0xB1);
+        printf("%c", borderCharacter);
     }
     printf("\n");
 
     for (int y = 0; y < WIDTH; y++) {
-        printf("%c", 0xB1);
-        printf("%c", 0xB1);
+        printf("%c", borderCharacter);
+        printf("%c", borderCharacter);
+
         for (int x = 0; x < LENGTH; x++) {
             printf("%c", scene[y][x]);
         }
-        printf("%c", 0xB1);
-        printf("%c", 0xB1);
-         printf("\n");
+
+        printf("%c", borderCharacter);
+        printf("%c", borderCharacter);
+        printf("\n");
     }
 
     for (int i = 0; i < (LENGTH + 4); i++) {
-        printf("%c", 0xB1);
+        printf("%c", borderCharacter);
     }
     printf("\n");
 }
