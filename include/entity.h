@@ -11,7 +11,7 @@ typedef struct  {
     char symbol;
     int posX;
     int posY;
-    int canInteract;
+    int canInteractWithEnvironnement;
 
     void (*action)(); //Recevra l'action de l'entité et invoquera action de block si y'en a un sur la case actionné
 } Entity;
