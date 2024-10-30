@@ -5,12 +5,12 @@ int main(void) {
     char key;
 
     Scene scene = createScene();
-    displayScene(scene);
+    displayScene(scene.scene);
 
     do {
         key = getLastKeyPressed();
         if(getLastKeyPressed() != '\0') {
-            displayScene(scene);
+            displayScene(scene.scene);
         }
 
     } while (1);

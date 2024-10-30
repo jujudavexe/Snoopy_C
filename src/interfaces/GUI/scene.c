@@ -27,13 +27,14 @@ void refreshScene(char scene[WIDTH][LENGTH], Block blocks[]/*, Entity entities*/
 }
 
 
-void displayScene(const Scene scene) {
+void displayScene(char scene[WIDTH][LENGTH]) {
     system("cls");
+
     for (int y = 0; y < WIDTH; y++) {
         for (int x = 0; x < LENGTH; x++) {
-            printf("%c", scene.scene[y][x]);
+            printf("%c", scene[y][x]);
         }
-         printf("\n");;
+         printf("\n");
     }
 }
 

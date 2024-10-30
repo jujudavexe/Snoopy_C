@@ -13,7 +13,7 @@ typedef struct {
 } Scene;
 
 Scene createScene();
-void displayScene(Scene scene);
+void displayScene(char scene[WIDTH][LENGTH]);
 void refreshScene(char scene[WIDTH][LENGTH], Block blocks[]);
 void initBlocks(Block blocks[]);
 
