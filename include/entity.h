@@ -1,10 +1,12 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+struct Entity;
+
 enum EntityAction {
     PASS,
     PUSH,
-    BREACK
+    BREAK
 };
 
 typedef struct  {
@@ -13,7 +15,7 @@ typedef struct  {
     int posY;
     int canInteractWithEnvironnement;
 
-    void (*action)(); //Recevra l'action de l'entité et invoquera action de block si y'en a un sur la case actionné
+    void (*action)(char key, struct Entity *entity); //Recevra l'action de l'entité et invoquera action de block si y'en a un sur la case actionné
 } Entity;
 
 #endif
