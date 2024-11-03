@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.28)
+project(Snoopy C)
+
+set(CMAKE_C_STANDARD 99)
+
+add_executable(Snoopy src/core/main.c
+        src/interfaces/GUI/scene.c
+        src/core/game/game_manager.c
+        include/game_manager.h
+        src/interfaces/IO/keypress.c
+        include/keypress.h
+        src/core/objects/block/block.c
+        include/block.h
+        src/core/objects/entity/entity.c
+        include/entity.h
+        src/core/game/level.c
+        include/level.h
+        src/core/objects/block/block_handler.c
+        include/block_handler.h
+        src/core/objects/entity/entity_handler.c
+        include/entity_handler.h
+        src/core/objects/block/block_type/neutral_block.c
+        include/neutral_block.h
+        src/core/objects/block/block_type/air_block.c
+        include/air_block.h
+        src/core/objects/entity/concrete_entity/snoopy.c
+        include/snoopy.h
+)
