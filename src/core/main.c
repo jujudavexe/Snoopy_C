@@ -1,19 +1,7 @@
-#include "../../include/scene.h"
-#include "../../include/keypress.h"
+#include "../../include/game_manager.h"
 
 int main(void) {
-    char key;
-
-    Scene scene = createScene();
-    displayScene(scene.scene);
-
-    do {
-        key = getLastKeyPressed();
-        if(getLastKeyPressed() != '\0') {
-            displayScene(scene.scene);
-        }
-
-    } while (1);
+    launchGame();
 
     return 0;
 }
