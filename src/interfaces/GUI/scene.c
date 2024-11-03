@@ -6,31 +6,26 @@
 
 char getElementInThis();
 
-Scene createScene() {
+Scene createScene(int numberOfEntities) {
     Scene scene;
 
-    Block blocks[(WIDTH * LENGTH)];
-    initBlocks(blocks);
+    initBlocks(scene.blocks);
+    initEntities(scene.entities, numberOfEntities, 4, 4);
 
-    int numberOfEntities = 1;
-    Entity entities[numberOfEntities];
-    initEntities(entities, numberOfEntities, 4, 3);
-
-
-    refreshScene(scene.scene, blocks, entities, numberOfEntities);
+    refreshScene(&scene, numberOfEntities);
 
     return scene;
 }
 
-void refreshScene(char scene[WIDTH][LENGTH], Block blocks[], Entity entities[], const int numberOfEntities) {
+void refreshScene(Scene *scene,const int numberOfEntities) {
     for (int iBlock = 0; iBlock < (WIDTH * LENGTH); iBlock++) {
-        Block block = blocks[iBlock];
-        scene[block.posY][block.posX] = block.symbol;
+        Block block = scene->blocks[iBlock];
+        scene->scene[block.posY][block.posX] = block.symbol;
     }
 
-    for (int iEntities = 0; iEntities < numberOfEntities; iEntities++) {
-        Entity entity = entities[iEntities];
-        scene[entity.posY][entity.posX] = entity.symbol;
+    for (int iEntity = 0; iEntity < numberOfEntities; iEntity++) {
+        Entity entity = scene->entities[iEntity];
+        scene->scene[entity.posY][entity.posX] = entity.symbol;
     }
 }
 
