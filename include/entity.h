@@ -2,6 +2,7 @@
 #define ENTITY_H
 
 struct Entity;
+struct Block;
 
 enum EntityAction {
     PASS,
@@ -15,7 +16,7 @@ typedef struct  {
     int posY;
     int canInteractWithEnvironnement;
 
-    void (*action)(char key, struct Entity *entity); //Recevra l'action de l'entité et invoquera action de block si y'en a un sur la case actionné
+    void (*action)(char key, struct Entity *entity, struct Block *block[]); //Recevra l'action de l'entité et invoquera action de block si y'en a un sur la case actionné
 } Entity;
 
 #endif

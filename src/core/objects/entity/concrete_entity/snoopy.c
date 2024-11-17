@@ -1,11 +1,12 @@
 #include "../../../../../include/snoopy.h"
+#include "../../../../../include/block.h"
 
 #define LENGTH 20
 #define WIDTH 10
 
 #include <stdio.h>
 
-void snoopyAction(char key, Entity *entity) {
+void snoopyAction(char key, Entity *entity, Block block) {
     switch (key) {
         case 'z':
             if (entity->posY > 0) //Si Snoopy n'est pas collé à la bordure du haut déplace Snoopy vers le haut
