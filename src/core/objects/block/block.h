@@ -9,7 +9,7 @@ typedef struct {
     int posY;
     int wasPushed;
 
-    void (*action)(enum EntityAction);
+    int (*action)(enum EntityAction);
 } Block;
 
 #endif

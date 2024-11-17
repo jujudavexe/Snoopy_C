@@ -6,23 +6,28 @@
 
 #include <stdio.h>
 
-void snoopyAction(char key, Entity *entity, Block block) {
+void snoopyAction(const char key, Entity *entity, Block block[WIDTH][LENGTH]) {
     switch (key) {
         case 'z':
-            if (entity->posY > 0) //Si Snoopy n'est pas collé à la bordure du haut déplace Snoopy vers le haut
+            if (entity->posY > 0 && block[entity->posY - 1][entity->posX].action(PASS) == 1)  //If Snoopy is not stuck to the top border move Snoopy up and if he can pass
                 entity->posY -= 1;
+
         break;
         case 's':
-            if (entity->posY < WIDTH - 1) //Si Snoopy n'est pas collé à la bordure du bas déplace Snoopy vers le bas
+            if (entity->posY < WIDTH - 1 && block[entity->posY + 1][entity->posX].action(PASS) == 1) //If Snoopy is not stuck to the bottom border move Snoopy down and if he can pass
                 entity->posY += 1;
         break;
         case 'q':
-            if (entity->posX > 0) //Si Snoopy n'est pas collé à la bordure de gauche déplace Snoopy vers la gauche
+            if (entity->posX > 0 && block[entity->posY][entity->posX - 1].action(PASS) == 1) //If Snoopy is not stuck to the left border move Snoopy to the left and if he can pass
                 entity->posX -= 1;
         break;
         case 'd':
-            if (entity->posX < LENGTH - 1) //Si Snoopy n'est pas collé à la bordure de droite déplace Snoopy vers la droite
+            if (entity->posX < LENGTH - 1 && block[entity->posY][entity->posX  + 1].action(PASS) == 1) //If Snoopy is not stuck to the right border move Snoopy to the right and if he can pass
                 entity->posX += 1;
+        break;
+        case 'a':
+        break;
+        case 'e':
         break;
         default:
             printf("Touche non assignée.\n");

@@ -1,6 +1,8 @@
 #include "air_block.h"
 
-int airBlockAction(enum EntityAction) {
+int airBlockAction(const enum EntityAction action) {
+    if(action == PASS)
+        return 1;
     return 0;
 }
 
