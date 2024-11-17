@@ -12,7 +12,7 @@ void launchGame() {
         key  = getLastKeyPressed();
         if(key != '\0') {
             for(int i = 0; i < numberOfEntities; i++) {
-                scene.entities[i].action(key, &scene.entities[i]);
+                scene.entities[i].action(key, &scene.entities[i], scene.blocks);
                 refreshScene(&scene, numberOfEntities);
             }
 
