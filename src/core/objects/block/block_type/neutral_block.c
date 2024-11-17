@@ -1,6 +1,6 @@
 #include "neutral_block.h"
 
-int neutralBlockAction(enum EntityAction) {
+int neutralBlockAction(const enum EntityAction action) {
     return 0;
 }
 

@@ -6,7 +6,7 @@
 
 char getElementInThis();
 
-Scene createScene(int numberOfEntities) {
+Scene createScene(const int numberOfEntities) {
     Scene scene;
 
     initBlocks(scene.blocks);
