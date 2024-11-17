@@ -1,4 +1,4 @@
-#include "../../../../include/entity_handler.h"
+#include "entity_handler.h"
 
 #include <stdio.h>
 #include <stdlib.h>

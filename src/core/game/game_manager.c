@@ -1,4 +1,4 @@
-#include "../../../include/game_manager.h"
+#include "game_manager.h"
 
 
 void launchGame() {

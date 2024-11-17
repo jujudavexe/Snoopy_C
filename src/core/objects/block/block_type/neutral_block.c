@@ -1,4 +1,4 @@
-#include "../../../../../include/neutral_block.h"
+#include "neutral_block.h"
 
 int neutralBlockAction(enum EntityAction) {
     return 0;

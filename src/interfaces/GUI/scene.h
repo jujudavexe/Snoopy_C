@@ -2,8 +2,8 @@
 #define SCENE_H
 
 
-#include "block_handler.h"
-#include "entity_handler.h"
+#include "../../core/objects/block/block_handler.h"
+#include "../../core/objects/entity/entity_handler.h"
 
 #define LENGTH 20
 #define WIDTH 10

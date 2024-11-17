@@ -1,7 +1,7 @@
 #ifndef BLOCK_H
 #define BLOCK_H
 
-#include "entity.h"
+#include "../entity/entity.h"
 
 typedef struct {
     char symbol;

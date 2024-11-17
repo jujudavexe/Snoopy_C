@@ -1,4 +1,4 @@
-#include "../../../include/keypress.h"
+#include "keypress.h"
 #include <conio.h>
 
 char getLastKeyPressed() {

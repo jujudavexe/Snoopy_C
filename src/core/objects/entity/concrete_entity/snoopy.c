@@ -1,5 +1,5 @@
-#include "../../../../../include/snoopy.h"
-#include "../../../../../include/block.h"
+#include "snoopy.h"
+#include "../../block/block.h"
 
 #define LENGTH 20
 #define WIDTH 10
